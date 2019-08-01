@@ -42,7 +42,7 @@ const getWindowPosition = () => {
     trayBounds.x + trayBounds.width / 2 - windowBounds.width / 2,
   );
   // Position window 4 pixels vertically below the tray icon
-  const y = Math.round(trayBounds.y + trayBounds.height + 36);
+  const y = Math.round(trayBounds.y + trayBounds.height + 4);
   return { x: x, y: y };
 };
 
@@ -56,6 +56,7 @@ const createWindow = () => {
     fullscreenable: false,
     resizable: false,
     transparent: true,
+    icon,
   });
   // mainWindow.setAspectRatio();
   mainWindow.loadURL(
@@ -71,7 +72,7 @@ const createWindow = () => {
   mainWindow.on('closed', () => (mainWindow = null));
   mainWindow.on('blur', () => {
     if (!mainWindow.webContents.isDevToolsOpened()) {
-      // mainWindow.hide();
+      mainWindow.hide();
     }
   });
 };
@@ -80,4 +81,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+});
+
+ipcMain.on('task-updated', (event, tasks) => {
+  tray.setTitle(`${tasks}`);
 });

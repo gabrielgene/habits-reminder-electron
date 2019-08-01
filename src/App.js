@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ipcRenderer } from 'electron';
 import Icon from '@material-ui/core/Icon';
 import InputBase from '@material-ui/core/InputBase';
 
@@ -50,6 +51,8 @@ class App extends Component {
 
   render() {
     const { insert, value, tasks } = this.state;
+    const pendingTasks = tasks.filter(t => !t.done);
+    ipcRenderer.send('task-updated', pendingTasks.length);
     return (
       <div className="App">
         {tasks.length > 0 ? (
