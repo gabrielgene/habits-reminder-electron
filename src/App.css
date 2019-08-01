@@ -1,33 +1,65 @@
 .App {
   text-align: center;
+  background-color: white;
+  width: 420px;
+  height: 400px;
+  overflow-x: scroll;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Icon-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.Icon-close-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Icon-close {
+  border-radius: 50%;
+  padding: 3px;
+  color: #F53E1C;
+}
+
+.Icon-remove {
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 16px;
+}
+
+.Icon {
+  background-color:#E7F5FD;
+  border-radius: 50%;
+  padding: 3px;
+  color: #0091EA;
+}
+
+.App-empty {
+  margin-top: 80px;
+}
+
+.App-empty-text {
+  font-family: Roboto;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.App-action {
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  bottom: 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex
+}
+
+.App-action-text {
+  margin-left: 16px;
+  margin-top: 19px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: #0091EA;
 }

@@ -24,10 +24,12 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.3.0",
     "electron-is-dev": "^1.0.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "uuidv4": "^4.0.0"
   },
   "homepage": "./",
   "main": "public/electron.js",
